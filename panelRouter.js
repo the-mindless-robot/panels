@@ -213,7 +213,7 @@ class PanelRouter {
         let panel = this.getPanelInstance(index);
         let async = panel.hasAsyncOnQueue();
 
-        this.prevPanel = this.getPanelInstance(this.activePanel);
+        const prevPanel = this.getPanelInstance(this.activePanel);
         this.previousPanel = this.activePanel;
         this.activePanel = index;
 
@@ -231,7 +231,7 @@ class PanelRouter {
         }
 
         //reset scroll
-        if(panel.isActive()) {
+        if(prevPanel) {
             // wait for animatin to complete
             setTimeout(()=>prevPanel._resetScroll(), 400);
         }
