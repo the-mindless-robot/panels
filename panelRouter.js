@@ -213,7 +213,8 @@ class PanelRouter {
         let panel = this.getPanelInstance(index);
         let async = panel.hasAsyncOnQueue();
 
-        this.previousPanel = this.getPanelInstance(this.activePanel);
+        this.prevPanel = this.getPanelInstance(this.activePanel);
+        this.previousPanel = this.activePanel;
         this.activePanel = index;
 
         if (async) {
