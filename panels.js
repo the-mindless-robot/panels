@@ -97,4 +97,8 @@ class Panel {
     _resetScroll(offsetTop = 0) {
         this.elem.scrollTop = offsetTop;
     }
+
+    _location() {
+        return this.elem.getBoundingClientRect();
+    }
 }
